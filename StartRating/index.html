@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="star"></div>
+    <div id="display-star"></div>
+    <div id="rating"> </div>
+
+
+    <script>
+        function getStar(value){
+            console.log("called")
+            document.getElementById("display-star").innerHTML += value;
+        }
+        
+        // generator function for generating Stars.
+        function Star(el, count, callback) {
+            let res = ""
+            for(let i=0; i<count; i++){
+                callback(`<i id={${el}-${i}} class="fa fa-star-o star"/>`)
+            }
+            return res
+        }
+        new Star("#star", 10, getStar);
+        
+    </script>
+    <script src="index.js"></script>
+    
+
+
+</body>
+</html>
